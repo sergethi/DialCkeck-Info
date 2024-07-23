@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block content %}
+<section>
+    <h1>Find your phone number details</h1>
+    <form action="" method="post">
+        {% csrf_token %}
+        <input type="tel" id="number" name="phone_number" placeholder="123-456-7891" required />
+        <button type="submit">Submit</button>
+    </form>
+</section>
+<section>
+    {% if number_info %}
+    <p>info: {{ number_info.number }}</p>
+    <p>Is valid: {{ number_info.is_valid }}</p>
+    <p>Is real: {{ number_info.is_real }}</p>
+    <p>Timezone: {{ number_info.timezone}}</p>
+    <p>Carier: {{ number_info.carrier }}</p>
+    <p>Location: {{ number_info.location }}</p>
+    {% endif %}
+</section>
+{% endblock %}

@@ -1,0 +1,27 @@
+body {
+    font-family: 'Karla', sans-serif;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
+    display: flex;
+    flex-direction: column;
+    /* margin-left: 5%;
+    margin-right: 5%; */
+    background-color: aqua;
+}
+section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Markazi Text', serif;
+    letter-spacing: 2px;;
+}
+
+h1 {
+    font-size: 4rem;
+    margin-top: 1.5rem;
+    margin-bottom: 0;
+}
