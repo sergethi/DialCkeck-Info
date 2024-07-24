@@ -1,22 +1,30 @@
 {% extends 'base.html' %}
 {% load static %}
 {% block content %}
-<section>
-    <h1>Find your phone number details</h1>
+
+<div class="banner">
+    <h1>Discover Phone Number Details Instantly</h1>
+    <p>Uncover the carrier, location, and validity of any phone number worldwide.</p>
+</div>
+
+<section class="form-section">
+    <h1>Uncover your caller's phone number details</h1>
     <form action="" method="post">
         {% csrf_token %}
         <input type="tel" id="number" name="phone_number" placeholder="123-456-7891" required />
         <button type="submit">Submit</button>
     </form>
 </section>
-<section>
+
+<section class="info-section">
     {% if number_info %}
-    <p>info: {{ number_info.number }}</p>
-    <p>Is valid: {{ number_info.is_valid }}</p>
-    <p>Is real: {{ number_info.is_real }}</p>
-    <p>Timezone: {{ number_info.timezone}}</p>
-    <p>Carier: {{ number_info.carrier }}</p>
-    <p>Location: {{ number_info.location }}</p>
+    <p><strong>Number:</strong> <span>{{ number_info.number }}</span></p>
+    <p><strong>Is valid:</strong> <span>{{ number_info.is_valid }}</span></p>
+    <p><strong>Is real:</strong> <span>{{ number_info.is_real }}</span></p>
+    <p><strong>Timezone:</strong> <span>{{ number_info.timezone }}</span></p>
+    <p><strong>Carrier:</strong> <span>{{ number_info.carrier }}</span></p>
+    <p><strong>Location:</strong> <span>{{ number_info.location }}</span></p>
     {% endif %}
 </section>
+
 {% endblock %}
